@@ -1,0 +1,26 @@
+toolshare-ledger/
+├── src/
+│   ├── components/
+│   │   ├── EquipmentCard.jsx
+│   │   ├── PriorityScore.jsx
+│   │   ├── BookingCalendar.jsx
+│   │   ├── DepositSummary.jsx
+│   │   └── DisputeTimeline.jsx
+│   ├── pages/
+│   │   ├── Dashboard.jsx
+│   │   ├── Equipment.jsx
+│   │   ├── RequestTool.jsx
+│   │   ├── Allocation.jsx
+│   │   ├── Settlement.jsx
+│   │   ├── Disputes.jsx
+│   │   └── Ledger.jsx
+│   ├── lib/
+│   │   ├── supabaseClient.js
+│   │   └── fairnessRules.js
+│   ├── data/
+│   │   └── demoScenarios.js
+│   ├── App.jsx
+│   └── main.jsx
+├── .env
+├── package.json
+└── README.md
