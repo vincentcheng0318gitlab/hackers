@@ -1,26 +1,31 @@
 toolshare-ledger/
 ├── src/
-│   ├── components/
-│   │   ├── EquipmentCard.jsx
-│   │   ├── PriorityScore.jsx
-│   │   ├── BookingCalendar.jsx
-│   │   ├── DepositSummary.jsx
-│   │   └── DisputeTimeline.jsx
-│   ├── pages/
-│   │   ├── Dashboard.jsx
-│   │   ├── Equipment.jsx
-│   │   ├── RequestTool.jsx
-│   │   ├── Allocation.jsx
-│   │   ├── Settlement.jsx
-│   │   ├── Disputes.jsx
-│   │   └── Ledger.jsx
-│   ├── lib/
-│   │   ├── supabaseClient.js
-│   │   └── fairnessRules.js
-│   ├── data/
-│   │   └── demoScenarios.js
-│   ├── App.jsx
-│   └── main.jsx
-├── .env
-├── package.json
-└── README.md
+│   ├── components/                    # Reusable UI pieces shared across pages
+│   │   ├── EquipmentCard.jsx         #   Displays a single tool: name, photo, owner, condition, deposit, availability
+│   │   ├── PriorityScore.jsx         #   Shows the calculated priority score with a breakdown of the 4 factors
+│   │   ├── BookingCalendar.jsx       #   Calendar widget for selecting borrow dates and checking availability
+│   │   ├── DepositSummary.jsx        #   Shows deposit amount held, released, deducted, or disputed for a booking
+│   │   └── DisputeTimeline.jsx       #   Vertical timeline of a dispute: claim, evidence, review, decision
+│   │
+│   ├── pages/                        # One page per major screen in the app
+│   │   ├── Dashboard.jsx             #   Home screen — overview of pool balance, active loans, pending disputes
+│   │   ├── Equipment.jsx             #   Equipment directory — browse all contributed tools, filter by availability
+│   │   ├── RequestTool.jsx           #   Borrowing request form — pick dates, state purpose, set urgency, see priority
+│   │   ├── Allocation.jsx            #   Shows competing requests for one item and explains why one member won
+│   │   ├── Settlement.jsx            #   Return and settlement — release deposit, apply late fees, pay compensation
+│   │   ├── Disputes.jsx              #   Dispute resolution — borrower/owner statements, evidence, moderator decision
+│   │   └── Ledger.jsx                #   Community ledger — all credits, penalties, compensation, pool transactions
+│   │
+│   ├── lib/                          # Core logic and external connections
+│   │   ├── supabaseClient.js         #   Supabase connection setup — replace mock data with real database later
+│   │   └── fairnessRules.js          #   The fairness engine — priority scoring, late fees, damage splits, withdrawal
+│   │
+│   ├── data/                         # Mock / seed data for the prototype
+│   │   └── demoScenarios.js          #   Pre-built test cases: users (Alex, Mei, Sam), equipment, bookings, disputes
+│   │
+│   ├── App.jsx                       # Root component — sets up routing between all pages
+│   └── main.jsx                      # Entry point — mounts the React app into the HTML
+│
+├── .env                              # Environment variables — Supabase URL and anon key go here later
+├── package.json                      # Project config — lists dependencies (React, Vite, etc.) and run scripts
+└── README.md                         # Documentation — how to install, run, and what each part does
